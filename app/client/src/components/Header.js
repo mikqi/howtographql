@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '@reach/router'
+import { Link, navigate } from '@reach/router'
 import { AUTH_TOKEN } from '../constants'
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
             className="ml1 pointer black"
             onClick={() => {
               localStorage.removeItem(AUTH_TOKEN)
-              this.props.history.push(`/`)
+              navigate(`/`)
             }}
           >
             logout
