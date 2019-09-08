@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
+import { FEED_QUERY } from './LinkList'
 
 const CreateLink = ({ navigate }) => {
   const [description, setDescription] = useState('')
@@ -28,6 +29,14 @@ const CreateLink = ({ navigate }) => {
         variables={{ description, url }}
         onCompleted={() => {
           navigate('/')
+        }}
+        update={(store, { data: { post } }) => {
+          const data = store.readQuery({ query: FEED_QUERY })
+          data.feed.links.unshift(post)
+          store.writeQuery({
+            query: FEED_QUERY,
+            data
+          })
         }}
       >
         {postMutation => <button onClick={postMutation}>Submit</button>}

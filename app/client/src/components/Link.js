@@ -4,7 +4,7 @@ import gql from 'graphql-tag'
 import { timeDifferenceForDate } from '../utls'
 import { AUTH_TOKEN } from '../constants'
 
-function Link({ link, index }) {
+function Link({ link, index, updateStoreAfterVote }) {
   const authToken = localStorage.getItem(AUTH_TOKEN)
 
   return (
@@ -12,7 +12,13 @@ function Link({ link, index }) {
       <div className="flex items-center">
         <span className="gray">{index + 1}.</span>
         {authToken && (
-          <Mutation variables={{ linkId: link.id }} mutation={VOTE_MUTATION}>
+          <Mutation
+            update={(store, { data: { vote } }) => {
+              updateStoreAfterVote(store, vote, link.id)
+            }}
+            variables={{ linkId: link.id }}
+            mutation={VOTE_MUTATION}
+          >
             {voteMutation => (
               <div className="ml1 gray f11" onClick={voteMutation}>
                 ▲
