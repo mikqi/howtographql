@@ -3,6 +3,7 @@ import { Router } from '@reach/router'
 import Header from './Header'
 import LinkList from './LinkList'
 import CreateLink from './CreateLink'
+import Login from './Login'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <LinkList path="/" />
         <CreateLink path="/create" />
+        <Login path="/login" />
       </Router>
     </>
   )
