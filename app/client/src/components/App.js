@@ -4,6 +4,7 @@ import Header from './Header'
 import LinkList from './LinkList'
 import CreateLink from './CreateLink'
 import Login from './Login'
+import Search from './Search'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <LinkList path="/" />
         <CreateLink path="/create" />
         <Login path="/login" />
+        <Search path="/search" />
       </Router>
     </>
   )
