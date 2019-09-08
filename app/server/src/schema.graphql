@@ -9,7 +9,7 @@ enum LinkOrderByInput {
 
 type Query {
   info: String!
-  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): [Link!]!
+  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!
   link(id: ID!, url: String): Link
 }
 
@@ -30,6 +30,11 @@ type Subscription {
 type AuthPayload {
   token: String
   user: User
+}
+
+type Feed {
+  links: [Link!]!
+  count: Int!
 }
 
 type User {
