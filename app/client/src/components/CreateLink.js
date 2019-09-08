@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import { Mutation } from 'react-apollo'
 import gql from 'graphql-tag'
 
-const CreateLink = () => {
+const CreateLink = ({ navigate }) => {
   const [description, setDescription] = useState('')
   const [url, setUrl] = useState('')
-
   return (
     <div>
       <div className="flex flex-column mt3">
@@ -24,7 +23,13 @@ const CreateLink = () => {
           placeholder="The URL for the link"
         />
       </div>
-      <Mutation mutation={POST_MUTATION} variables={{ description, url }}>
+      <Mutation
+        mutation={POST_MUTATION}
+        variables={{ description, url }}
+        onCompleted={() => {
+          navigate('/')
+        }}
+      >
         {postMutation => <button onClick={postMutation}>Submit</button>}
       </Mutation>
     </div>
