@@ -12,6 +12,8 @@ function App() {
       <Header />
       <Router>
         <LinkList path="/" />
+        <LinkList path="/top" />
+        <LinkList path="/new/:page" />
         <CreateLink path="/create" />
         <Login path="/login" />
         <Search path="/search" />

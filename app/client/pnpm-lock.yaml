@@ -4,6 +4,7 @@ dependencies:
   apollo-link-context: 1.0.19_graphql@14.5.4
   apollo-link-ws: 1.0.19_685615ac97a3b4ce9033a4bc39e011f5
   graphql: 14.5.4
+  query-string: 6.8.3
   react: 16.9.0
   react-apollo: 3.1.0_a32fb036b54d32affbf3d5b0b40e4392
   react-dom: 16.9.0_react@16.9.0
@@ -9024,6 +9025,16 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+  /query-string/6.8.3:
+    dependencies:
+      decode-uri-component: 0.2.0
+      split-on-first: 1.1.0
+      strict-uri-encode: 2.0.0
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-llcxWccnyaWlODe7A9hRjkvdCKamEKTh+wH8ITdTc3OhchaqUZteiSCX/2ablWHVrkVIe04dntnaZJ7BdyW0lQ==
   /querystring-es3/0.2.1:
     dev: false
     engines:
@@ -10052,6 +10063,12 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-HeZS3PBdMA+sZSu0qwpCxl3DeALD5ASx8pAX0jZdKXSpPWbQ6SYGnlg3BBmYLx5LtiZrmkAZfErCm2oECBcioA==
+  /split-on-first/1.1.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==
   /split-string/3.1.0:
     dependencies:
       extend-shallow: 3.0.2
@@ -10146,6 +10163,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-1cdSgl5TZ+eG944Y5EXqIjoVWVI=
+  /strict-uri-encode/2.0.0:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-ucczDHBChi9rFC3CdLvMWGbONUY=
   /string-length/2.0.0:
     dependencies:
       astral-regex: 1.0.0
@@ -11364,6 +11387,7 @@ specifiers:
   apollo-link-context: ^1.0.19
   apollo-link-ws: ^1.0.19
   graphql: ^14.5.4
+  query-string: ^6.8.3
   react: ^16.9.0
   react-apollo: ^3.1.0
   react-dom: ^16.9.0
