@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
-import qs from 'query-string'
 import { navigate } from '@reach/router'
 import Link from './Link'
 import { LINKS_PER_PAGE } from '../constants'
